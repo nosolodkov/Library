@@ -1,0 +1,35 @@
+﻿@page
+@model LibraryWeb.Pages.BookList.IndexModel
+
+
+<br />
+<div class="container row p-0 m-0">
+    <div class="col-8">
+        <h2 class="text-info">Book List</h2>
+    </div>
+    <div class="col-4">
+        <a class="btn btn-info form-control text-white">Create New Book</a>
+    </div>
+
+    <div class="col-12 border p-3 mt-3">
+        <from method="post">
+            @if (Model.Books.Count() > 0)
+            {
+                <table class="table table-striped border">
+                    <tr class="table-secondary">
+                        <th>
+                            <label asp-for="Books.FirstOrDefault().Name"></label>
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(m => m.Books.FirstOrDefault().Author)
+                        </th>
+                    </tr>
+                </table>
+            }
+            else
+            {
+                <p>No books available</p>
+            }
+        </from>
+    </div>
+</div>
