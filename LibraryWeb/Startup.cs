@@ -23,6 +23,7 @@ namespace LibraryWeb
             services.AddDbContext<ApplicationDbContext>(
                 options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+            services.AddControllersWithViews();
             services.AddRazorPages().AddRazorRuntimeCompilation();
         }
 
@@ -49,6 +50,7 @@ namespace LibraryWeb
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllers();
                 endpoints.MapRazorPages();
             });
         }
