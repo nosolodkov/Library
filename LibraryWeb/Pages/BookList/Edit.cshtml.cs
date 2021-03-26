@@ -22,14 +22,14 @@ namespace LibraryWeb.Pages.BookList
 
         public async Task OnGet(int id)
         {
-            Book = await _db.Book.FindAsync(id);
+            Book = await _db.Books.FindAsync(id);
         }
 
         public async Task<IActionResult> OnPost()
         {
             if (ModelState.IsValid)
             {
-                var bookFromDb = await _db.Book.FindAsync(Book.Id);
+                var bookFromDb = await _db.Books.FindAsync(Book.Id);
                 bookFromDb.Name = Book.Name;
                 bookFromDb.ISBN = Book.ISBN;
                 bookFromDb.Author = Book.Author;

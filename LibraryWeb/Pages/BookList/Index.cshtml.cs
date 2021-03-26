@@ -36,15 +36,15 @@ namespace LibraryWeb.Pages.BookList
 
         public async Task OnGet()
         {
-            Books = await _db.Book.ToListAsync();
+            Books = await _db.Books.ToListAsync();
         }
 
         public async Task<IActionResult> OnPostDelete(int id)
         {
-            var book = _db.Book.FindAsync(id);
+            var book = _db.Books.FindAsync(id);
             if (book.Result == null) return NotFound();
 
-            _db.Book.Remove(book.Result);
+            _db.Books.Remove(book.Result);
             await _db.SaveChangesAsync();
 
             return RedirectToPage("Index");

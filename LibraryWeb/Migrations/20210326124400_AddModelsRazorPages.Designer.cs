@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LibraryWeb.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210318121010_AddISBNToBookModel")]
-    partial class AddISBNToBookModel
+    [Migration("20210326124400_AddModelsRazorPages")]
+    partial class AddModelsRazorPages
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -39,7 +39,7 @@ namespace LibraryWeb.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Book");
+                    b.ToTable("Books");
                 });
 #pragma warning restore 612, 618
         }

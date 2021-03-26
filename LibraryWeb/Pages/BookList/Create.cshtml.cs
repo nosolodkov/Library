@@ -28,7 +28,7 @@ namespace LibraryWeb.Pages.BookList
         {
             if (ModelState.IsValid)
             {
-                await _db.Book.AddAsync(Book);
+                await _db.Books.AddAsync(Book);
                 await _db.SaveChangesAsync();
                 return RedirectToPage("Index");
             }
